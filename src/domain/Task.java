@@ -36,8 +36,10 @@ public class Task implements DomainObject {
         return taskStatus;
     }
 
-    public void setTaskStatus(TaskStatus taskStatus) {
+    public Task setTaskStatus(TaskStatus taskStatus) {
         this.taskStatus = taskStatus;
+        
+        return this;
     }
 
     public String getTitle() {
