@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package domain.chat;
 
 /**
  *
- * @author Filip
+ * @author Nikola
  */
-public enum TaskStatus {
-    Active,
-    WaitingForResponse,
-    Finished,
-    Deleted,
-    Delayed;
+public enum MessageType {
+    Private,
+    Global,
+    Important;
 }
