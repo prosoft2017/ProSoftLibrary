@@ -6,6 +6,8 @@
 package domain;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -23,14 +25,7 @@ public class AppUser implements DomainObject{
     private String password;
     private Address address;
     private LocalDate lastActive;
-
-    public LocalDate getLastActive() {
-        return lastActive;
-    }
-
-    public void setLastActive(LocalDate lastActive) {
-        this.lastActive = lastActive;
-    }
+    private List<Task> allTasks = new ArrayList<>();
 
     public AppUser() {
     }
@@ -45,6 +40,22 @@ public class AppUser implements DomainObject{
         this.imagePath = imagePath;
         this.address = address;
         this.password = password;
+    }
+    
+    public List<Task> getAllTasks() {
+        return allTasks;
+    }
+
+    public void setAllTasks(List<Task> allTasks) {
+        this.allTasks = allTasks;
+    }
+
+    public LocalDate getLastActive() {
+        return lastActive;
+    }
+
+    public void setLastActive(LocalDate lastActive) {
+        this.lastActive = lastActive;
     }
 
     public String getFirstname() {

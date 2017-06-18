@@ -90,4 +90,10 @@ public class Task implements DomainObject {
         return this;
     }
 
+    @Override
+    public String toString() {
+        return "Task{ " + title + " }";
+    }
+
+    
 }
