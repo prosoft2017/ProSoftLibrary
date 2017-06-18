@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package domain.task;
 
+import domain.user.AppUser;
+import domain.DomainObject;
 import java.time.LocalDate;
 
 /**
@@ -36,8 +38,10 @@ public class Task implements DomainObject {
         return taskStatus;
     }
 
-    public void setTaskStatus(TaskStatus taskStatus) {
+    public Task setTaskStatus(TaskStatus taskStatus) {
         this.taskStatus = taskStatus;
+
+        return this;
     }
 
     public String getTitle() {
@@ -92,8 +96,7 @@ public class Task implements DomainObject {
 
     @Override
     public String toString() {
-        return "Task{ " + title + " }";
+        return title;
     }
 
-    
 }

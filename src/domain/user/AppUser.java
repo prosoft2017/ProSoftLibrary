@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package domain.user;
 
+import domain.DomainObject;
+import domain.task.Task;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.List;
  *
  * @author Nikola
  */
-public class AppUser implements DomainObject{
+public class AppUser implements DomainObject {
 
     private String firstname;
     private String lastname;
@@ -26,6 +28,14 @@ public class AppUser implements DomainObject{
     private Address address;
     private LocalDate lastActive;
     private List<Task> allTasks = new ArrayList<>();
+
+    public LocalDate getLastActive() {
+        return lastActive;
+    }
+
+    public void setLastActive(LocalDate lastActive) {
+        this.lastActive = lastActive;
+    }
 
     public AppUser() {
     }
@@ -41,21 +51,13 @@ public class AppUser implements DomainObject{
         this.address = address;
         this.password = password;
     }
-    
+
     public List<Task> getAllTasks() {
         return allTasks;
     }
 
     public void setAllTasks(List<Task> allTasks) {
         this.allTasks = allTasks;
-    }
-
-    public LocalDate getLastActive() {
-        return lastActive;
-    }
-
-    public void setLastActive(LocalDate lastActive) {
-        this.lastActive = lastActive;
     }
 
     public String getFirstname() {
@@ -153,5 +155,4 @@ public class AppUser implements DomainObject{
         return lastname + " " + firstname;
     }
 
-    
 }

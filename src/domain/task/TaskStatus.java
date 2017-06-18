@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain;
+package domain.task;
 
 /**
  *
  * @author Filip
  */
-public enum StatusType {
+public enum TaskStatus {
     Active,
-    Pending,
-    Locked;
+    WaitingForResponse,
+    Finished,
+    Deleted,
+    Delayed;
 }
