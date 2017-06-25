@@ -10,13 +10,11 @@ import domain.task.Task;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-/**
- *
- * @author Nikola
- */
-public class AppUser implements DomainObject {
+public class AppUser implements DomainObject, Cloneable {
 
+    private int id;
     private String firstname;
     private String lastname;
     private String username;
@@ -27,14 +25,37 @@ public class AppUser implements DomainObject {
     private String password;
     private Address address;
     private LocalDate lastActive;
+    private UserTitle title;
     private List<Task> allTasks = new ArrayList<>();
+
+    public UserTitle getTitle() {
+        return title;
+    }
+
+    public AppUser setTitle(UserTitle title) {
+        this.title = title;
+
+        return this;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public AppUser setId(int id) {
+        this.id = id;
+
+        return this;
+    }
 
     public LocalDate getLastActive() {
         return lastActive;
     }
 
-    public void setLastActive(LocalDate lastActive) {
+    public AppUser setLastActive(LocalDate lastActive) {
         this.lastActive = lastActive;
+
+        return this;
     }
 
     public AppUser() {
@@ -56,8 +77,10 @@ public class AppUser implements DomainObject {
         return allTasks;
     }
 
-    public void setAllTasks(List<Task> allTasks) {
+    public AppUser setAllTasks(List<Task> allTasks) {
         this.allTasks = allTasks;
+
+        return this;
     }
 
     public String getFirstname() {
@@ -153,6 +176,47 @@ public class AppUser implements DomainObject {
     @Override
     public String toString() {
         return lastname + " " + firstname;
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return new AppUser()
+                .setId(id)
+                .setUsername(username)
+                .setFirstname(firstname)
+                .setLastname(lastname)
+                .setLastActive(lastActive)
+                .setEmail(email)
+                .setAddress((Address) address.clone())
+                .setBaned(baned)
+                .setTitle(title)
+                .setAllTasks(allTasks)
+                .setStatus(status);
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 19 * hash + Objects.hashCode(this.username);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final AppUser other = (AppUser) obj;
+        if (!Objects.equals(this.username, other.username)) {
+            return false;
+        }
+        return true;
     }
 
 }

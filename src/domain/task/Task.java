@@ -15,6 +15,7 @@ import java.time.LocalDate;
  */
 public class Task implements DomainObject {
 
+    private int id;
     private String title;
     private String description;
     private AppUser appUser;
@@ -32,6 +33,14 @@ public class Task implements DomainObject {
         this.startDate = startDate;
         this.endDate = endDate;
         this.taskStatus = taskStatus;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public TaskStatus getTaskStatus() {

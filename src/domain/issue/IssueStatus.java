@@ -10,8 +10,8 @@ package domain.issue;
  * @author Nikola
  */
 public enum IssueStatus {
-    New,
-    Resolved,
-    Pending,
-    Rejected;
+    NEW,
+    RESOLVED,
+    PENDING,
+    REJECTED;
 }

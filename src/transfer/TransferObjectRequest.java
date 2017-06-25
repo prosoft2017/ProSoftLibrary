@@ -7,10 +7,6 @@ package transfer;
 
 import java.io.Serializable;
 
-/**
- *
- * @author student1
- */
 public class TransferObjectRequest implements Serializable {
 
     private int operation;
@@ -35,5 +31,4 @@ public class TransferObjectRequest implements Serializable {
 
         return this;
     }
-
 }

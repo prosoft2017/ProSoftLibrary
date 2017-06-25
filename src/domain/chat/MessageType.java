@@ -10,7 +10,7 @@ package domain.chat;
  * @author Nikola
  */
 public enum MessageType {
-    Private,
-    Global,
-    Important;
+    PRIVATE,
+    GLOBAL,
+    IMPORTANT;
 }

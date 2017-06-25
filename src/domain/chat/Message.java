@@ -12,15 +12,16 @@ import java.util.List;
  *
  * @author Nikola
  */
-public class Message implements domain.DomainObject{
-    
+public class Message implements domain.DomainObject {
+
     private AppUser appUserSender;
     private List<AppUser> appUserReciver;
     private String messageContent;
     private MessageType messageType;
+    private MessageThread messageThread;
 
     public Message() {
-        messageType = MessageType.Private;
+        messageType = MessageType.PRIVATE;
     }
 
     public Message(AppUser appUserSender, List<AppUser> appUserReciver, String messageContent, MessageType messageType) {
@@ -60,6 +61,14 @@ public class Message implements domain.DomainObject{
 
     public MessageType getMessageType() {
         return messageType;
+    }
+
+    public MessageThread getMessageThread() {
+        return messageThread;
+    }
+
+    public void setMessageThread(MessageThread messageThread) {
+        this.messageThread = messageThread;
     }
 
     @Override

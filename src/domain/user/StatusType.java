@@ -10,7 +10,7 @@ package domain.user;
  * @author Filip
  */
 public enum StatusType {
-    Active,
-    Pending,
-    Locked;
+    ACTIVE,
+    PENDING,
+    LOCKED;
 }

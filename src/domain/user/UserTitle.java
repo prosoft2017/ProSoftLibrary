@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package domain.task;
+package domain.user;
 
 /**
  *
  * @author Filip
  */
-public enum TaskStatus {
-    ACTIVE,
-    WAITING_FOR_RESPONSE,
-    FINISHED,
-    DELETED,
-    DELAYED;
+public enum UserTitle {
+    ROLE_USER,
+    ROLE_ADMIN,
+    ROLE_SUPERADMIN
 }

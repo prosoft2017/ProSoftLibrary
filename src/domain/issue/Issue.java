@@ -6,6 +6,7 @@
 package domain.issue;
 
 import domain.DomainObject;
+import domain.user.AppUser;
 import java.time.LocalDate;
 
 /**
@@ -14,6 +15,7 @@ import java.time.LocalDate;
  */
 public class Issue implements DomainObject {
 
+    private int id;
     private String title;
     private String description;
     private String helpText;
@@ -21,6 +23,23 @@ public class Issue implements DomainObject {
     private LocalDate createdAt;
     private IssueStatus issueStatus;
     private LocalDate resolvedAt;
+    private AppUser appUser;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public AppUser getAppUser() {
+        return appUser;
+    }
+
+    public void setAppUser(AppUser appUser) {
+        this.appUser = appUser;
+    }
 
     public String getTitle() {
         return title;

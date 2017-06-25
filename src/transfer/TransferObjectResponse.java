@@ -7,10 +7,6 @@ package transfer;
 
 import java.io.Serializable;
 
-/**
- *
- * @author student1
- */
 public class TransferObjectResponse implements Serializable {
 
     private Object result;
